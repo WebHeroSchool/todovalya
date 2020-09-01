@@ -1,10 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-
-const day = '18.08.2020'
-const today = `Today is ${day}`
-const tuesday = true;
+import { result } from './number';
 
 function App() {
 	return (
@@ -16,20 +13,11 @@ function App() {
         </p>
 				<p style={{
 					color: 'red',
-					fontSize: 42
+					fontSize: 40
 				}}> Hello World!
-        </p>
-				<p>
-					{today}
-				</p>
-				<p>{15 + 8}
 				</p>
 				<p>
-					{tuesday ? `Yes` : `No`}
-					{undefined}
-					{null}
-					{true}
-					{false}
+					{result}
 				</p>
 				<a
 					className="App-link"
@@ -43,5 +31,4 @@ function App() {
 		</div>
 	);
 }
-
 export default App;
