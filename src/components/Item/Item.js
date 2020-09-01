@@ -1,5 +1,5 @@
 import React from 'react';
 
-const Item = () => (<span>Прогулка</span>);
+const Item = ({ book }) => (<span>{book}</span>);
 
 export default Item; 
