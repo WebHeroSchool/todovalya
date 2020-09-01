@@ -1,6 +1,6 @@
 import React from 'react';
 
 const InputItem = () => (
-	<span>InputItem</span>);
+	<span>Список</span>);
 
 export default InputItem; 
