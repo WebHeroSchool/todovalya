@@ -9,13 +9,16 @@ const todoItem = 'Написать новое приложение'
 const App = () => {
 	const items = [
 		{
-			value: 'Написать новое приложение'
+			value: 'Написать новое приложение',
+			isDone: true
 		},
 		{
-			value: 'Прописать props'
+			value: 'Прописать props',
+			isDone: true
 		},
 		{
-			value: 'Сделать все дела'
+			value: 'Сделать все дела',
+			isDone: false
 		}
 	];
 
@@ -24,7 +27,7 @@ const App = () => {
 			<h1 className={styles.title}>Важные дела:</h1>
 			<InputItem />
 			<ItemList items={items} />
-			<Footer count={3} />
+			<Footer count={1} />
 		</div >);
 }
 
