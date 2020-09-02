@@ -1,8 +1,13 @@
 .wrap {
 	margin: auto;
 	width: 300px;
+	border: 1px solid #6e6e6e;
+  border-radius: 10%;
+  box-shadow: 1px 1px 5px;
+  padding: 20px 60px;
 }
 
 .title {
 	font-family: Georgia, 'Times New Roman', Times, serif;
+	text-align: center;
 }

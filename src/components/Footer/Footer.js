@@ -1,5 +1,9 @@
 import React from 'react';
+import styles from './Footer.module.css';
 
-const Footer = ({ count }) => (<div>Вот столько дел еще осталось сделать: {count} </div>);
+const Footer = ({ count }) => (
+	<div className={styles.text}>
+		Осталось выполнить: {count}
+	</div>);
 
 export default Footer;
