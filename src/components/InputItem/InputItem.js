@@ -16,6 +16,7 @@ const InputItem = () => {
 			<TextField
 				id="outlined-basic"
 				label="Добавить задачу"
+				style={{ margin: 8 }}
 				variant="outlined"
 				size="small"
 				fullWidth

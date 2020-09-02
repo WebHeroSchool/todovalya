@@ -4,20 +4,20 @@ import ItemList from '../ItemList/ItemList';
 import Footer from '../Footer/Footer';
 import styles from './App.module.css';
 
-const todoItem = 'Написать новое приложение'
+const todoItem = 'Почитать книгу'
 
 const App = () => {
 	const items = [
 		{
-			value: 'Написать новое приложение',
+			value: 'Почитать книгу',
 			isDone: true
 		},
 		{
-			value: 'Прописать props',
+			value: 'Испечь торт',
 			isDone: true
 		},
 		{
-			value: 'Сделать все дела',
+			value: 'Сделать уборку',
 			isDone: false
 		}
 	];
