@@ -4,11 +4,11 @@ import ItemList from '../ItemList/ItemList';
 import Footer from '../Footer/Footer';
 import styles from './App.module.css';
 
-const todoItem = 'Почитать книгу'
+const todoItem = 'Почитать книгу';
 
 class App extends React.Component {
-	render() {
-		const items = [
+	state = {
+		items: [
 			{
 				value: 'Почитать книгу',
 				isDone: true
@@ -21,14 +21,16 @@ class App extends React.Component {
 				value: 'Сделать уборку',
 				isDone: false
 			}
-		];
+		]
+	};
 
+	render() {
 		return (
 			<div className={styles.wrap}>
 				<h1 className={styles.title}>Важные дела:</h1>
 				<InputItem />
-				<ItemList items={items} />
-				<Footer count={3} />
+				<ItemList items={this.state.items} />
+				<Footer count={2} />
 			</div >);
 	}
 };
