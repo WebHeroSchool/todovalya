@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import InputItem from '../InputItem/InputItem';
 import ItemList from '../ItemList/ItemList';
 import Footer from '../Footer/Footer';
@@ -14,7 +15,7 @@ class App extends React.Component {
 			},
 			{
 				value: 'Испечь торт',
-				isDone: true,
+				isDone: false,
 				id: 2
 			},
 			{
@@ -23,7 +24,7 @@ class App extends React.Component {
 				id: 3
 			}
 		],
-		count: 6
+		count: 3
 	};
 
 	onClickDone = id => {
@@ -32,7 +33,6 @@ class App extends React.Component {
 			if (item.id === id) {
 				newItem.isDone = !item.isDone;
 			}
-
 			return newItem;
 		});
 
@@ -44,12 +44,28 @@ class App extends React.Component {
 		this.setState({ items: newList });
 	};
 
+	onClickAdd = value => this.setState(state => ({
+		items: [
+			...state.items,
+			{
+				value,
+				isDone: false,
+				id: state.count + 1
+			}
+		],
+		count: state.count + 1
+	}));
+
 	render() {
 		return (
 			<div className={styles.wrap}>
 				<h1 className={styles.title}>Важные дела:</h1>
-				<InputItem />
-				<ItemList items={this.state.items} onClickDone={this.onClickDone} onClickDelete={this.onClickDelete} />
+				<InputItem onClickAdd={this.onClickAdd} />
+				<ItemList
+					items={this.state.items}
+					onClickDone={this.onClickDone}
+					onClickDelete={this.onClickDelete}
+				/>
 				<Footer count={this.state.count} />
 			</div >);
 	}
