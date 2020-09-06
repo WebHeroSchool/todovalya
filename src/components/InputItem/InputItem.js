@@ -1,28 +1,62 @@
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
-import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
 
-const InputItem = () => {
-	const theme = createMuiTheme({
-		palette: {
-			primary: {
-				main: '#6c5ce7'
-			}
+class InputItem extends React.Component {
+	state = {
+		inputValue: '',
+		errorMsg: '',
+		isError: false
+	};
+
+	onButtonClick = () => {
+		if (this.state.inputValue !== '') {
+			this.setState({
+				inputValue: '',
+				errorMsg: '',
+				isError: false,
+			});
+			this.props.onClickAdd(this.state.inputValue);
+		} else {
+			this.setState({
+				errorMsg: 'Заполните поле!',
+				isError: true,
+			});
 		}
-	});
+	};
 
-	return (<div>
-		<ThemeProvider theme={theme}>
-			<TextField
-				id="outlined-basic"
-				label="Добавить задачу"
-				style={{ margin: 8 }}
-				variant="outlined"
-				size="small"
-				fullWidth
-			/>
-		</ThemeProvider>
-	</div>);
+	changeUppercase = event => {
+		this.setState({ inputValue: event.target.value.toUpperCase() });
+	};
+
+	render() {
+		return (
+			<div>
+				<TextField
+					error={this.state.error}
+					id="outlined-full-width"
+					style={{ margin: 8 }}
+					placeholder="Добавить задание"
+					helperText={this.state.errorMsg}
+					fullWidth
+					margin="normal"
+					InputLabelProps={{
+						shrink: true,
+					}}
+					variant="outlined"
+					value={this.state.inputValue}
+					onChange={this.changeUppercase}
+				/>
+				<Button
+					variant="contained"
+					color="primary"
+					fullWidth
+					onClick={() => this.onButtonClick()}
+				>
+					Добавить
+					</Button>
+			</div>);
+	}
 }
 
 export default InputItem; 
