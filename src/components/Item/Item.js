@@ -5,16 +5,12 @@ import styles from './Item.module.css';
 
 class Item extends React.Component {
 	componentDidMount() {
-		console.log('componentDidMount');
+		this.timerID = setInterval(() => console.log('interval'), 1000);
 	}
 
 	componentDidUpdate() {
-		console.log('componentDidMount');
-	}
-
-	componentWillUnmount() {
-		console.log('componentWillUnmount');
-	}
+		console.log('componentDidUpdate');
+	};
 
 	render() {
 		const { value, isDone } = this.props;
