@@ -13,4 +13,10 @@ const Item = ({ value, isDone, onClickDone }) => (
 		{value}
 	</span>);
 
+Item.defaultProps = {
+	items: {
+		value: "Важные дела отсутствуют"
+	}
+};
+
 export default Item;
