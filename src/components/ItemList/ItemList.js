@@ -35,4 +35,4 @@ ItemList.propTypes = {
 	onClickDelete: PropTypes.func
 };
 
-export default ItemList
+export default ItemList;
