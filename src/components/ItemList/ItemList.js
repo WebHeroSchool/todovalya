@@ -27,4 +27,4 @@ const ItemList = ({ items, onClickDone, onClickDelete }) => (<ul>
 		</li>)}
 </ul>);
 
-export default ItemList
+export default ItemList;
