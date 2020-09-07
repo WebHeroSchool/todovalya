@@ -14,9 +14,7 @@ const Item = ({ value, isDone, onClickDone }) => (
 	</span>);
 
 Item.defaultProps = {
-	items: {
-		value: "Важные дела отсутствуют"
-	}
+	value: "Важные дела отсутствуют"
 };
 
 export default Item;
