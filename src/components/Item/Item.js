@@ -12,6 +12,10 @@ class Item extends React.Component {
 		console.log('componentDidUpdate');
 	};
 
+	componentWillUnmount() {
+		clearInterval(this.timerID);
+	}
+
 	render() {
 		const { value, isDone } = this.props;
 		return (<span
