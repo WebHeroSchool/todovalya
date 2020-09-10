@@ -1,13 +1,24 @@
-.wrap {
-	margin: auto;
-	width: 300px;
-	border: 1px solid #6e6e6e;
-  border-radius: 10%;
-  box-shadow: 1px 1px 5px;
-  padding: 20px 60px;
+body {
+  background-color: #e6e6fa;
 }
 
-.title {
-	font-family: Georgia, 'Times New Roman', Times, serif;
-	text-align: center;
+.wrap {
+	display: flex;
+  justify-content: space-between;
+  margin: auto;
+  width: 800px;
+  padding-top: 10px;
 }
+
+.link {
+  text-decoration: none;
+	color: black;
+}
+
+.sidebar {
+		width: 150px;
+		background-color: white;
+		border: hidden;
+		border-radius: 10px;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, .5);
+	} 
