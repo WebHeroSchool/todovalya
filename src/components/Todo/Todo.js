@@ -5,7 +5,6 @@ import Footer from '../Footer/Footer';
 import styles from './Todo.module.css';
 
 const Todo = () => {
-
 	const initialState = {
 		items: [
 			{
@@ -17,7 +16,6 @@ const Todo = () => {
 				value: 'Испечь пирог',
 				isDone: false,
 				id: 2
-
 			},
 			{
 				value: 'Сделать уборку',
@@ -27,7 +25,6 @@ const Todo = () => {
 		],
 		count: 3,
 	};
-
 	const [items, setItems] = useState(initialState.items);
 	const [count, setCount] = useState(initialState.count);
 
@@ -58,18 +55,16 @@ const Todo = () => {
 				id: count + 1
 			}
 		];
-
 		setItems(newItemList);
 		setCount(count => count + 1);
 	};
 
-	return (
-		<div className={styles.content}>
-			<h1 className={styles.title}>Важные дела:</h1>
-			<InputItem onClickAdd={onClickAdd} />
-			<ItemList items={items} onClickDone={onClickDone} onClickDelete={onClickDelete} />
-			<Footer count={1} />
-		</div>);
+	return (<div className={styles.content}>
+		<h1 className={styles.title}>Важные дела:</h1>
+		<InputItem onClickAdd={onClickAdd} />
+		<ItemList items={items} onClickDone={onClickDone} onClickDelete={onClickDelete} />
+		<Footer count={1} />
+	</div>);
 };
 
-export default Todo
+export default Todo;
