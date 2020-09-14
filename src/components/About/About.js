@@ -17,7 +17,6 @@ class About extends React.Component {
 	};
 
 	componentDidMount() {
-
 		octokit.repos.listForUser({
 			username: this.state.username,
 		}).then((
